@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class Camera_Controller : MonoBehaviour
 {
-    public Camera sceneCam;
+    Camera sceneCam;
     public LayerMask targetLayer;
+
+    void Start(){
+        sceneCam = this.gameObject.GetComponent<Camera>();
+    }
     void Update()
     {
        targetPerson();
