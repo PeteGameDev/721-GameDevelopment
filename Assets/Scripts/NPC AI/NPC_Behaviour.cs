@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
-
+using System.Collections.Generic;
 public class NPC_Behaviour : MonoBehaviour
 {
     float wanderRadius;
@@ -9,17 +9,25 @@ public class NPC_Behaviour : MonoBehaviour
     private Transform target;
     private NavMeshAgent agent;
     private float timer;
-
+    public NPC_Information_SO npcInfoSO; 
+    public GameObject headItem;
     void Awake(){
         wanderRadius = Random.Range(1, 100);
         wanderTimer = Random.Range(1, 10);
+        
     }
     
-    void OnEnable () {
+    void Start() {
         agent = GetComponent<NavMeshAgent> ();
         timer = wanderTimer;
-    }
-  
+        gameObject.GetComponent<Renderer>().material.color = npcInfoSO.NPCcolor;
+        if(npcInfoSO.headItemOn == true){
+            headItem.SetActive(true);
+        }
+        //npcInfoSO.headItem.SetActive(true);
+        
+        
+    }  
     
     void Update () {
         timer += Time.deltaTime;
