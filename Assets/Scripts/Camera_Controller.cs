@@ -6,6 +6,7 @@ public class Camera_Controller : MonoBehaviour
     float panSpeed = 3f;
     Camera sceneCam;
     public LayerMask targetLayer;
+    public GameObject endScreen;
 
     void Start(){
         sceneCam = this.gameObject.GetComponent<Camera>();
@@ -26,6 +27,8 @@ public class Camera_Controller : MonoBehaviour
                 //Debug.Log(hit.collider.name);
                 if(hit.collider.gameObject.GetComponent<NPC_Behaviour>().npcInfoSO.isTarget == true){
                     Debug.Log("you win");
+                    endScreen.SetActive(true);
+                    Destroy(hit.collider.gameObject);
                 }
             }
             
