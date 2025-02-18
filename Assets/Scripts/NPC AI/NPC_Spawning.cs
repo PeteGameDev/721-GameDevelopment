@@ -4,7 +4,7 @@ public class NPC_Spawning : MonoBehaviour
 {
     GameObject[] spawnPoints, spawnedNPC;
     public NPC_Information_SO[] npcInfoScriptables;
-    public GameObject regularNPC;
+    public GameObject regularNPC, targetNPC;
     public int maxNPC;
 
     List<GameObject> SpawnPoints = new List<GameObject>();
@@ -23,7 +23,8 @@ public class NPC_Spawning : MonoBehaviour
         for(int i = 0; i < spawnedNPC.Length; i++){
             spawnedNPC[i].GetComponent<NPC_Behaviour>().npcInfoSO = npcInfoScriptables[1];
         }
-        spawnedNPC[Random.Range(0, spawnedNPC.Length)].GetComponent<NPC_Behaviour>().npcInfoSO = npcInfoScriptables[0];
+        targetNPC = spawnedNPC[Random.Range(0, spawnedNPC.Length)];
+        targetNPC.GetComponent<NPC_Behaviour>().npcInfoSO = npcInfoScriptables[0];
         
     }
     void SpawnPicker()

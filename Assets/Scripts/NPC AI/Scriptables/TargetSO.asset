@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: TargetSO
   m_EditorClassIdentifier: 
   isTarget: 1
-  NPCcolor: {r: 0.52201253, g: 0.52201253, b: 0.52201253, a: 0}
-  headItemOn: 1
+  NPCcolor: {r: 1, g: 0, b: 0, a: 0}

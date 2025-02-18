@@ -14,7 +14,7 @@ public class Camera_Controller : MonoBehaviour
     void Update()
     {
        targetPerson();
-       //CameraControls();
+       
     }
 
     void targetPerson(){

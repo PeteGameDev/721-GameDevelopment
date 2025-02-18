@@ -21,10 +21,10 @@ public class NPC_Behaviour : MonoBehaviour
         agent = GetComponent<NavMeshAgent> ();
         timer = wanderTimer;
         gameObject.GetComponent<Renderer>().material.color = npcInfoSO.NPCcolor;
-        if(npcInfoSO.headItemOn == true){
+        //Instantiate(npcInfoSO.headItem[Random.Range(0, npcInfoSO.headItem.Length)], headItem.transform.position, headItem.transform.rotation);
+        if(npcInfoSO.isTarget == true){
             headItem.SetActive(true);
         }
-        //npcInfoSO.headItem.SetActive(true);
         
         
     }  
