@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class Menu_Camera_Controller : MonoBehaviour
 {
@@ -8,7 +10,7 @@ public class Menu_Camera_Controller : MonoBehaviour
     public Camera cam;
     public GameObject sceneCameras, inGameCanvas, menuCanvas, docObject;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -46,8 +48,21 @@ public class Menu_Camera_Controller : MonoBehaviour
             }
 
             if(hit.collider.gameObject.tag == ("Document")){
-                docObject.SetActive(true);
+                OpenFolder();
             }
         }
+    }
+
+    public void CloseFolder(){
+        lookSpeed = 7.5f;
+        Cursor.lockState = CursorLockMode.Locked;
+        docObject.SetActive(false);
+    }
+
+    void OpenFolder(){
+        Cursor.lockState = CursorLockMode.None;
+        lookSpeed = 0;
+        docObject.SetActive(true);
+        
     }
 }

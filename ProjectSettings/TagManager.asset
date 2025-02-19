@@ -8,6 +8,7 @@ TagManager:
   - NPC
   - PC
   - Document
+  - NPCPrefabs
   layers:
   - Default
   - TransparentFX
