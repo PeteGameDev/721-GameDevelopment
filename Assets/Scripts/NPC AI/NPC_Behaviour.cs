@@ -5,9 +5,9 @@ using DG.Tweening;
 public class NPC_Behaviour : MonoBehaviour
 {
     float wanderRadius;
-    float wanderTimer;
-    int number, otherNumber;
-    private Transform target;
+    float wanderTimer, otherNumber;
+    int number;
+    private Transform targetPosition;
     private NavMeshAgent agent;
     private float timer;
     public NPC_Information_SO npcInfoSO; 
@@ -18,6 +18,8 @@ public class NPC_Behaviour : MonoBehaviour
         wanderRadius = Random.Range(1, 100);
         wanderTimer = Random.Range(1, 10);
         number = Random.Range(0, NPCPrefabs.Length);
+        otherNumber = Random.Range(1.1f, 1.9f);
+        targetPosition = GameObject.Find("Target_Position").transform;
     }
     
     void Start() {
@@ -26,7 +28,9 @@ public class NPC_Behaviour : MonoBehaviour
         gameObject.GetComponent<Renderer>().material.color = npcInfoSO.NPCcolor;
         NPCPrefabs[number].SetActive(true);
         if(npcInfoSO.isTarget == true){
-            NPCPrefabs[number].GetComponent<Renderer>().material.DOTiling(new Vector2(Random.Range(1.1f, 1.9f), 1), 1f);
+            NPCPrefabs[number].GetComponent<Renderer>().material.DOTiling(new Vector2(otherNumber, 1), 1f);
+            GameObject targetClone = Instantiate(this.transform.GetChild(0).gameObject, targetPosition.position, targetPosition.rotation);
+            //targetClone.GetComponent<Renderer>().material.DOTiling(new Vector2(otherNumber, 1), 1f);
         }
         
         
