@@ -33,7 +33,7 @@ public class NPC_Behaviour : MonoBehaviour
             //targetClone.GetComponent<Renderer>().material.DOTiling(new Vector2(otherNumber, 1), 1f);
         }
         
-        
+        agent.speed = Random.Range(2, 4);
         
     }  
     

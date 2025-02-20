@@ -1,19 +1,30 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Camera_Controller : MonoBehaviour
 {
     float screenPixEdge = 10f;
-    float panSpeed = 3f;
+    float min = 20f, max = 60f, cameraFOV;
     Camera sceneCam;
     public LayerMask targetLayer;
     public GameObject endScreen;
 
     void Start(){
         sceneCam = this.gameObject.GetComponent<Camera>();
+        cameraFOV = 60f;
+        
     }
     void Update()
-    {
-       targetPerson();
+    {   
+        
+        targetPerson();
+        if(Input.GetKey(KeyCode.E) && cameraFOV <= max){
+            cameraFOV++;
+        }
+        if(Input.GetKey(KeyCode.Q) && cameraFOV >= min){
+            cameraFOV--;
+        }
+        
+        sceneCam.fieldOfView = cameraFOV;
        
     }
 
@@ -35,13 +46,5 @@ public class Camera_Controller : MonoBehaviour
         }
     }
 
-    void CameraControls(){
-        float rotationx = Input.mousePosition.x;
-        float rotationy = Input.mousePosition.y;
-
-        //rotationx = Mathf.Clamp(rotationx, -50f, 50f);
-        //rotationy = Mathf.Clamp(rotationy, -10f, 30f);
-
-        transform.localEulerAngles = new Vector3(rotationx * panSpeed, rotationy * panSpeed, 0);
-    }
+    
 }   
