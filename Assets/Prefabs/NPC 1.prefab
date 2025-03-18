@@ -135,6 +135,7 @@ MonoBehaviour:
   - {fileID: 8173942905886324175}
   - {fileID: 8173908436169399025}
   anims: {fileID: 8086971983562130043}
+  maxWanderDistnace: 100
 --- !u!195 &1378447658116011262
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -144,9 +145,9 @@ NavMeshAgent:
   m_GameObject: {fileID: 4544507505348569592}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 4
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0

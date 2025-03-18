@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class Menu_Camera_Controller : MonoBehaviour
 {
@@ -9,17 +11,19 @@ public class Menu_Camera_Controller : MonoBehaviour
     float rotationX, rotationY;
     public Camera cam;
     public GameObject sceneCameras, inGameCanvas, menuCanvas, docObject;
-
+    
+    int x, y;
     
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        x = Screen.width / 2; 
+        y = Screen.height / 2;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CameraRotate();
+        //CameraRotate();
         if(Input.GetButtonDown("Fire1")){
             SelectObject();
         }
@@ -37,7 +41,7 @@ public class Menu_Camera_Controller : MonoBehaviour
     }
 
     void SelectObject(){
-        RaycastHit hit; 
+        /*RaycastHit hit; 
         if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 10f)){
             if(hit.collider.gameObject.tag == ("PC")){
                 sceneCameras.SetActive(true);
@@ -50,19 +54,42 @@ public class Menu_Camera_Controller : MonoBehaviour
             if(hit.collider.gameObject.tag == ("Document")){
                 OpenFolder();
             }
+        }*/
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = cam.nearClipPlane;
+        Ray ray = cam.ScreenPointToRay(mousePos);
+        RaycastHit hit;
+        if(Physics.Raycast(ray, out hit)){
+            if(hit.collider.gameObject.tag == ("PC")){
+                sceneCameras.SetActive(true);
+                cam.gameObject.SetActive(false);
+                inGameCanvas.SetActive(true);
+                menuCanvas.SetActive(false);
+                //Cursor.lockState = CursorLockMode.None;
+            }
+
+            if(hit.collider.gameObject.tag == ("Document")){
+                OpenFolder();
+            }
         }
     }
 
     public void CloseFolder(){
         lookSpeed = 7.5f;
-        Cursor.lockState = CursorLockMode.Locked;
-        docObject.SetActive(false);
+        //Cursor.lockState = CursorLockMode.Locked;
+        //docObject.SetActive(false);
+        docObject.transform.DOMove(new Vector3(x, -1500, 0), 1);
     }
 
     void OpenFolder(){
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.lockState = CursorLockMode.None;
         lookSpeed = 0;
-        docObject.SetActive(true);
+        //docObject.SetActive(true);
+        docObject.transform.DOMove(new Vector3(x, y, 0), 1);
         
+    }
+
+    public void AbandonSearch(){
+        SceneManager.LoadScene(0);
     }
 }

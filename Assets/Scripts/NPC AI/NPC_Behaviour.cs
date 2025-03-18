@@ -13,19 +13,21 @@ public class NPC_Behaviour : MonoBehaviour
     public NPC_Information_SO npcInfoSO; 
     public GameObject[] NPCPrefabs;
     public Animator anims;
+    [Range(1, 100)]
+    public float maxWanderDistnace;
     
     void Awake(){
-        wanderRadius = Random.Range(1, 100);
+        wanderRadius = Random.Range(1, maxWanderDistnace);
         wanderTimer = Random.Range(1, 10);
         number = Random.Range(0, NPCPrefabs.Length);
         otherNumber = Random.Range(1.1f, 1.9f);
+        otherNumber = Mathf.Round(otherNumber * 10.0f) * 0.1f;
         targetPosition = GameObject.Find("Target_Position").transform;
     }
     
     void Start() {
         agent = GetComponent<NavMeshAgent>();
         timer = wanderTimer;
-        gameObject.GetComponent<Renderer>().material.color = npcInfoSO.NPCcolor;
         NPCPrefabs[number].SetActive(true);
         if(npcInfoSO.isTarget == true){
             NPCPrefabs[number].GetComponent<Renderer>().material.DOTiling(new Vector2(otherNumber, 1), 1f);

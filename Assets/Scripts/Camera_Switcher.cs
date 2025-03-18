@@ -4,7 +4,7 @@ using DG.Tweening;
 
 public class Camera_Switcher : MonoBehaviour
 {
-    public Image fadeToBlack;
+    public RawImage fadeToBlack;
     public int selectedCamera = 0;
 
     public GameObject sceneCameras, menuCamera, inGameCanvas, menuCanvas;
@@ -41,14 +41,14 @@ public class Camera_Switcher : MonoBehaviour
             SelectCamera();
             fadeToBlack.DOFade(0f, 0.5f);
         }
-
         if(Input.GetKeyDown(KeyCode.Escape)){
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
             sceneCameras.SetActive(false);
             menuCamera.SetActive(true);
             inGameCanvas.SetActive(false);
             menuCanvas.SetActive(true);
         }
+
     }
 
     void SelectCamera()
@@ -64,4 +64,5 @@ public class Camera_Switcher : MonoBehaviour
         }
         fadeToBlack.DOFade(255f, 0.5f);
     }
+
 }

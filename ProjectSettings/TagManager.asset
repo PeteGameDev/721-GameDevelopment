@@ -9,6 +9,8 @@ TagManager:
   - PC
   - Document
   - NPCPrefabs
+  - OtherTarget
+  - ObjectiveSP
   layers:
   - Default
   - TransparentFX
