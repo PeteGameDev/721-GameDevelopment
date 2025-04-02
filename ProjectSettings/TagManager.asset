@@ -11,6 +11,7 @@ TagManager:
   - NPCPrefabs
   - OtherTarget
   - ObjectiveSP
+  - PoliceNPC
   layers:
   - Default
   - TransparentFX

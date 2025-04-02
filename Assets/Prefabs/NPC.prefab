@@ -2876,7 +2876,6 @@ GameObject:
   - component: {fileID: 6344835360962865908}
   - component: {fileID: 4259142865422490803}
   - component: {fileID: 8505851025999650446}
-  - component: {fileID: 4997065601811738962}
   - component: {fileID: 1378447658116011262}
   m_Layer: 6
   m_Name: NPC
@@ -2977,30 +2976,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4997065601811738962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4544507505348569592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f8a53b773e3154c8c8dbb7e0a910f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcInfoSO: {fileID: 0}
-  NPCPrefabs:
-  - {fileID: 1788892438381272765}
-  - {fileID: 1788892438381371525}
-  - {fileID: 1788892438381276095}
-  - {fileID: 1788892438381384159}
-  - {fileID: 1788892438381265849}
-  - {fileID: 1788892438381213469}
-  - {fileID: 1788892438381270335}
-  - {fileID: 1788892438381314077}
-  - {fileID: 1788892438381303855}
-  anims: {fileID: 1788892438388682625}
 --- !u!195 &1378447658116011262
 NavMeshAgent:
   m_ObjectHideFlags: 0

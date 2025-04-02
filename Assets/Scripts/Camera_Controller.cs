@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using UnityEngine.AI;
 public class Camera_Controller : MonoBehaviour
 {
     float screenPixEdge = 10f;
@@ -9,7 +10,7 @@ public class Camera_Controller : MonoBehaviour
     float moveMin = -100, moveMax = 100;
     Camera sceneCam;
     public LayerMask targetLayer;
-    public GameObject endScreen;
+    public GameObject endScreen, policeNPC;
     [Range(0, 10)]
     public float rotateSpeed;
     public NPC_Spawning npc_spawning;
@@ -49,8 +50,12 @@ public class Camera_Controller : MonoBehaviour
             if(Input.GetButtonDown("Fire1")){
                 if(hit.collider.gameObject.GetComponent<NPC_Behaviour>() != null){
                     if(hit.collider.gameObject.GetComponent<NPC_Behaviour>().npcInfoSO.isTarget == true){
-                        Destroy(hit.collider.gameObject);
+                        //Destroy(hit.collider.gameObject);
                         //do screen effect?
+                        hit.collider.gameObject.GetComponent<NavMeshAgent>().speed = 0;
+                        hit.collider.gameObject.GetComponent<NPC_Behaviour>().anims.SetBool("isCaught", true);
+                        policeNPC.GetComponent<NavMeshAgent>().SetDestination(hit.collider.gameObject.transform.position);
+                        
                         foundToggle.GetComponent<Toggle>().isOn = true;
                         //play sound
                         scoreCalc.finalScore += 1000;

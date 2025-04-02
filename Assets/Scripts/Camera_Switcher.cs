@@ -8,10 +8,10 @@ public class Camera_Switcher : MonoBehaviour
     public int selectedCamera = 0;
 
     public GameObject sceneCameras, menuCamera, inGameCanvas, menuCanvas;
+    public AudioSource staticAudio;
     // Start is called before the first frame update
     void Start()
     {
-        
         SelectCamera();
         fadeToBlack.DOFade(0f, 0.5f);
     }
@@ -40,6 +40,7 @@ public class Camera_Switcher : MonoBehaviour
         {
             SelectCamera();
             fadeToBlack.DOFade(0f, 0.5f);
+            staticAudio.Play();
         }
         if(Input.GetKeyDown(KeyCode.Escape)){
             //Cursor.lockState = CursorLockMode.Locked;

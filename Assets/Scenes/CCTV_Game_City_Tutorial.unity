@@ -9126,6 +9126,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   endScreen: {fileID: 583436234969670519}
+  policeNPC: {fileID: 1414053704}
   rotateSpeed: 10
   npc_spawning: {fileID: 2048660498}
   zoomSlider: {fileID: 1866458947552362069}
@@ -15285,8 +15286,10 @@ MonoBehaviour:
   - 'Now look at your computer and use your left click to open up the cameras. '
   - 'You have multiple view points. Use your Scroll Wheel to switch between these
     cameras. '
+  - Zoom your camera in and out with the Q and E keys
   - 'Don''t remember your target? Use the Escape (Esc) key to return to your office. '
   - 'Found your target? Use your left click to select them! '
+  - Our happy drunken police officer will no arrest the suspect.
   - 'Return to your folder to see if you found the right person. Once you''re done,
     you can close the case. '
   - Or see if there's more for you to find...
@@ -60521,6 +60524,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c50789636e1fc5c4b8a37e2700e4a3c1, type: 3}
+--- !u!1 &1414053704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 132645625775719826, guid: bfda50ed36a79ea4eb36ced385ff5fab, type: 3}
+  m_PrefabInstance: {fileID: 2217045449929016794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1416577542 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 413058, guid: ae7b8255185ace64ca379cb1ca3b24e6, type: 3}
@@ -92295,6 +92303,63 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &2217045449929016794
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 132645625775719826, guid: bfda50ed36a79ea4eb36ced385ff5fab, type: 3}
+      propertyPath: m_Name
+      value: PoliceNPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312299627015213229, guid: bfda50ed36a79ea4eb36ced385ff5fab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312299627015213229, guid: bfda50ed36a79ea4eb36ced385ff5fab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.863
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312299627015213229, guid: bfda50ed36a79ea4eb36ced385ff5fab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -29.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312299627015213229, guid: bfda50ed36a79ea4eb36ced385ff5fab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312299627015213229, guid: bfda50ed36a79ea4eb36ced385ff5fab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312299627015213229, guid: bfda50ed36a79ea4eb36ced385ff5fab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312299627015213229, guid: bfda50ed36a79ea4eb36ced385ff5fab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312299627015213229, guid: bfda50ed36a79ea4eb36ced385ff5fab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312299627015213229, guid: bfda50ed36a79ea4eb36ced385ff5fab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312299627015213229, guid: bfda50ed36a79ea4eb36ced385ff5fab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bfda50ed36a79ea4eb36ced385ff5fab, type: 3}
 --- !u!224 &2231620574292741161
 RectTransform:
   m_ObjectHideFlags: 0
@@ -92372,6 +92437,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3117340249225789897}
     - target: {fileID: 1363884741865054337, guid: f9d93d50ddf2f3148a30ad3a82d7cc4f, type: 3}
+      propertyPath: staticAudio
+      value: 
+      objectReference: {fileID: 6912596464717555171}
+    - target: {fileID: 1363884741865054337, guid: f9d93d50ddf2f3148a30ad3a82d7cc4f, type: 3}
       propertyPath: inGameCanvas
       value: 
       objectReference: {fileID: 702696328745292985}
@@ -92379,6 +92448,10 @@ PrefabInstance:
       propertyPath: endScreen
       value: 
       objectReference: {fileID: 583436234969670519}
+    - target: {fileID: 4237344623025614822, guid: f9d93d50ddf2f3148a30ad3a82d7cc4f, type: 3}
+      propertyPath: policeNPC
+      value: 
+      objectReference: {fileID: 1414053704}
     - target: {fileID: 4237344623025614822, guid: f9d93d50ddf2f3148a30ad3a82d7cc4f, type: 3}
       propertyPath: zoomSlider
       value: 
@@ -92451,6 +92524,10 @@ PrefabInstance:
       propertyPath: endScreen
       value: 
       objectReference: {fileID: 583436234969670519}
+    - target: {fileID: 5633847093277127417, guid: f9d93d50ddf2f3148a30ad3a82d7cc4f, type: 3}
+      propertyPath: policeNPC
+      value: 
+      objectReference: {fileID: 1414053704}
     - target: {fileID: 5633847093277127417, guid: f9d93d50ddf2f3148a30ad3a82d7cc4f, type: 3}
       propertyPath: zoomSlider
       value: 
@@ -95349,6 +95426,7 @@ GameObject:
   - component: {fileID: 53146952082503170}
   - component: {fileID: 5354208402637321351}
   - component: {fileID: 3117340249225789897}
+  - component: {fileID: 6912596464717555171}
   m_Layer: 5
   m_Name: FadeToBlack
   m_TagString: Untagged
@@ -95356,6 +95434,103 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!82 &6912596464717555171
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6912596464717555170}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b1aaf24e8481f9a4097b9417a6d9a76e, type: 3}
+  m_Resource: {fileID: 8300000, guid: b1aaf24e8481f9a4097b9417a6d9a76e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.564
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!222 &6942087965114852697
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -96522,3 +96697,4 @@ SceneRoots:
   - {fileID: 988647106}
   - {fileID: 2048967342}
   - {fileID: 2129308230}
+  - {fileID: 2217045449929016794}

@@ -135,7 +135,7 @@ MonoBehaviour:
   - {fileID: 8173942905886324175}
   - {fileID: 8173908436169399025}
   anims: {fileID: 8086971983562130043}
-  maxWanderDistnace: 100
+  maxWanderDistnace: 30.2
 --- !u!195 &1378447658116011262
 NavMeshAgent:
   m_ObjectHideFlags: 0
