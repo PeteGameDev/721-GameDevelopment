@@ -9127,6 +9127,8 @@ MonoBehaviour:
     m_Bits: 64
   endScreen: {fileID: 583436234969670519}
   policeNPC: {fileID: 1414053704}
+  targetText: {fileID: 4896334154029577024, guid: bde7c91602f6d4042933ea9de2035e43, type: 3}
+  incorrectText: {fileID: 4423362675237495362, guid: ad10efa48da06f04cb1297e6b9a17d94, type: 3}
   rotateSpeed: 10
   npc_spawning: {fileID: 2048660498}
   zoomSlider: {fileID: 1866458947552362069}
@@ -15289,7 +15291,7 @@ MonoBehaviour:
   - Zoom your camera in and out with the Q and E keys
   - 'Don''t remember your target? Use the Escape (Esc) key to return to your office. '
   - 'Found your target? Use your left click to select them! '
-  - Our happy drunken police officer will no arrest the suspect.
+  - Our happy drunken police officer will now arrest the suspect.
   - 'Return to your folder to see if you found the right person. Once you''re done,
     you can close the case. '
   - Or see if there's more for you to find...
@@ -92431,7 +92433,7 @@ PrefabInstance:
     - target: {fileID: 1363884741865054337, guid: f9d93d50ddf2f3148a30ad3a82d7cc4f, type: 3}
       propertyPath: menuCanvas
       value: 
-      objectReference: {fileID: 4934213172082852275}
+      objectReference: {fileID: 0}
     - target: {fileID: 1363884741865054337, guid: f9d93d50ddf2f3148a30ad3a82d7cc4f, type: 3}
       propertyPath: fadeToBlack
       value: 
@@ -92453,6 +92455,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1414053704}
     - target: {fileID: 4237344623025614822, guid: f9d93d50ddf2f3148a30ad3a82d7cc4f, type: 3}
+      propertyPath: targetText
+      value: 
+      objectReference: {fileID: 4896334154029577024, guid: bde7c91602f6d4042933ea9de2035e43, type: 3}
+    - target: {fileID: 4237344623025614822, guid: f9d93d50ddf2f3148a30ad3a82d7cc4f, type: 3}
       propertyPath: zoomSlider
       value: 
       objectReference: {fileID: 1866458947552362069}
@@ -92464,6 +92470,10 @@ PrefabInstance:
       propertyPath: npc_spawning
       value: 
       objectReference: {fileID: 2048660498}
+    - target: {fileID: 4237344623025614822, guid: f9d93d50ddf2f3148a30ad3a82d7cc4f, type: 3}
+      propertyPath: incorrectText
+      value: 
+      objectReference: {fileID: 4423362675237495362, guid: ad10efa48da06f04cb1297e6b9a17d94, type: 3}
     - target: {fileID: 4237344623025614822, guid: f9d93d50ddf2f3148a30ad3a82d7cc4f, type: 3}
       propertyPath: sObjectiveToggle
       value: 
@@ -92529,6 +92539,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1414053704}
     - target: {fileID: 5633847093277127417, guid: f9d93d50ddf2f3148a30ad3a82d7cc4f, type: 3}
+      propertyPath: targetText
+      value: 
+      objectReference: {fileID: 4896334154029577024, guid: bde7c91602f6d4042933ea9de2035e43, type: 3}
+    - target: {fileID: 5633847093277127417, guid: f9d93d50ddf2f3148a30ad3a82d7cc4f, type: 3}
       propertyPath: zoomSlider
       value: 
       objectReference: {fileID: 1866458947552362069}
@@ -92540,6 +92554,10 @@ PrefabInstance:
       propertyPath: npc_spawning
       value: 
       objectReference: {fileID: 2048660498}
+    - target: {fileID: 5633847093277127417, guid: f9d93d50ddf2f3148a30ad3a82d7cc4f, type: 3}
+      propertyPath: incorrectText
+      value: 
+      objectReference: {fileID: 4423362675237495362, guid: ad10efa48da06f04cb1297e6b9a17d94, type: 3}
     - target: {fileID: 5633847093277127417, guid: f9d93d50ddf2f3148a30ad3a82d7cc4f, type: 3}
       propertyPath: sObjectiveToggle
       value: 
@@ -92906,7 +92924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadSlider: {fileID: 381305964384268644}
-  inGameMenu: {fileID: 4934213172082852275}
+  inGameMenu: {fileID: 8902619250271570501}
 --- !u!224 &2895510517623398423
 RectTransform:
   m_ObjectHideFlags: 0
@@ -94086,24 +94104,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &4934213172082852275
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5779499760444055517}
-  - component: {fileID: 6560454780817042339}
-  - component: {fileID: 6456123414428658278}
-  m_Layer: 0
-  m_Name: Crosshair
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!224 &4987237352925376644
 RectTransform:
   m_ObjectHideFlags: 0
@@ -94592,25 +94592,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &5779499760444055517
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4934213172082852275}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7217827634318374413}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 5, y: 5}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &5870454759767745270
 RectTransform:
   m_ObjectHideFlags: 0
@@ -94860,36 +94841,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6456123414428658278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4934213172082852275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &6457863736417095944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95021,14 +94972,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 180}
   m_SizeDelta: {x: 1079.6094, y: 24.0275}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6560454780817042339
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4934213172082852275}
-  m_CullTransparentMesh: 1
 --- !u!114 &6574619335884449950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95781,7 +95724,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5779499760444055517}
   - {fileID: 1586550945938840932}
   m_Father: {fileID: 3666057537164490433}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -96503,7 +96445,7 @@ PrefabInstance:
     - target: {fileID: 5526236146295860534, guid: b12f97787f1f38449b91c8269031fbbd, type: 3}
       propertyPath: menuCanvas
       value: 
-      objectReference: {fileID: 4934213172082852275}
+      objectReference: {fileID: 0}
     - target: {fileID: 5526236146295860534, guid: b12f97787f1f38449b91c8269031fbbd, type: 3}
       propertyPath: inGameCanvas
       value: 

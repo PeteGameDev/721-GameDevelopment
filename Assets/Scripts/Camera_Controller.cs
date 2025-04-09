@@ -10,7 +10,7 @@ public class Camera_Controller : MonoBehaviour
     float moveMin = -100, moveMax = 100;
     Camera sceneCam;
     public LayerMask targetLayer;
-    public GameObject endScreen, policeNPC;
+    public GameObject endScreen, policeNPC, targetText, incorrectText;
     [Range(0, 10)]
     public float rotateSpeed;
     public NPC_Spawning npc_spawning;
@@ -55,22 +55,29 @@ public class Camera_Controller : MonoBehaviour
                         hit.collider.gameObject.GetComponent<NavMeshAgent>().speed = 0;
                         hit.collider.gameObject.GetComponent<NPC_Behaviour>().anims.SetBool("isCaught", true);
                         policeNPC.GetComponent<NavMeshAgent>().SetDestination(hit.collider.gameObject.transform.position);
-                        
+                        GameObject textClone1 = Instantiate(targetText, hit.collider.gameObject.transform);
+                        textClone1.transform.LookAt(this.gameObject.transform);
+                        Destroy(textClone1, 1f);
                         foundToggle.GetComponent<Toggle>().isOn = true;
                         //play sound
                         scoreCalc.finalScore += 1000;
+                        PlayerPrefs.SetInt("TargetFound", 1);
 
                     }
                     if(hit.collider.gameObject.GetComponent<NPC_Behaviour>().npcInfoSO.isTarget == false){
                         //bad sound effect?
                         scoreCalc.incorrectGuess++;
                         scoreCalc.finalScore -= 100;
+                        GameObject textClone2 = Instantiate(incorrectText, hit.collider.gameObject.transform);
+                        textClone2.transform.LookAt(this.gameObject.transform);
+                        Destroy(textClone2, 1f);
                     }   
                 }
                 if(hit.collider.gameObject.tag == "OtherTarget"){
                     sObjectiveToggle.GetComponent<Toggle>().isOn = true;
                     Destroy(hit.collider.gameObject);
                     scoreCalc.finalScore += 500;
+                    PlayerPrefs.SetInt("WeaponFound", 1);
                 }
                 
             }

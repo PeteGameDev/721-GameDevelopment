@@ -7,6 +7,11 @@ public class ScoreCalculator : MonoBehaviour
     public TMP_Text finalScoreText;
     public TMP_Text incorrectGuessText;
 
+    void Start()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
     void Update()
     {
         //if(targetfound){finalscore + 1000}
@@ -14,5 +19,6 @@ public class ScoreCalculator : MonoBehaviour
         //finalscore = score - incorrect guesses 
         finalScoreText.SetText(finalScore.ToString());
         incorrectGuessText.SetText(incorrectGuess.ToString());
+        PlayerPrefs.SetInt("finalScore", finalScore);
     }
 }

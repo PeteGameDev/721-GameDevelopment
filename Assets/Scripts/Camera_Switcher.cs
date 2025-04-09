@@ -7,7 +7,7 @@ public class Camera_Switcher : MonoBehaviour
     public RawImage fadeToBlack;
     public int selectedCamera = 0;
 
-    public GameObject sceneCameras, menuCamera, inGameCanvas, menuCanvas;
+    public GameObject sceneCameras, menuCamera, inGameCanvas;
     public AudioSource staticAudio;
     // Start is called before the first frame update
     void Start()
@@ -47,7 +47,7 @@ public class Camera_Switcher : MonoBehaviour
             sceneCameras.SetActive(false);
             menuCamera.SetActive(true);
             inGameCanvas.SetActive(false);
-            menuCanvas.SetActive(true);
+            //playerHubUI.SetActive(true);
         }
 
     }

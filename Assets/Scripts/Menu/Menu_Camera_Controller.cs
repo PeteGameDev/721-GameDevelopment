@@ -10,9 +10,10 @@ public class Menu_Camera_Controller : MonoBehaviour
 
     float rotationX, rotationY;
     public Camera cam;
-    public GameObject sceneCameras, inGameCanvas, menuCanvas, docObject;
+    public GameObject sceneCameras, inGameCanvas, docObject;
     
     int x, y;
+    bool folderOpen = false;
     
     void Start()
     {
@@ -26,6 +27,10 @@ public class Menu_Camera_Controller : MonoBehaviour
         //CameraRotate();
         if(Input.GetButtonDown("Fire1")){
             SelectObject();
+        }
+
+        if(folderOpen && Input.GetKeyDown(KeyCode.Escape)){
+            CloseFolder();
         }
         
     }
@@ -47,7 +52,7 @@ public class Menu_Camera_Controller : MonoBehaviour
                 sceneCameras.SetActive(true);
                 cam.gameObject.SetActive(false);
                 inGameCanvas.SetActive(true);
-                menuCanvas.SetActive(false);
+                playerHubUI.SetActive(false);
                 Cursor.lockState = CursorLockMode.None;
             }
 
@@ -64,7 +69,7 @@ public class Menu_Camera_Controller : MonoBehaviour
                 sceneCameras.SetActive(true);
                 cam.gameObject.SetActive(false);
                 inGameCanvas.SetActive(true);
-                menuCanvas.SetActive(false);
+                //playerHubUI.SetActive(false);
                 //Cursor.lockState = CursorLockMode.None;
             }
 
@@ -75,6 +80,7 @@ public class Menu_Camera_Controller : MonoBehaviour
     }
 
     public void CloseFolder(){
+        folderOpen = false;
         lookSpeed = 7.5f;
         //Cursor.lockState = CursorLockMode.Locked;
         //docObject.SetActive(false);
@@ -82,6 +88,7 @@ public class Menu_Camera_Controller : MonoBehaviour
     }
 
     void OpenFolder(){
+        folderOpen = true;
         //Cursor.lockState = CursorLockMode.None;
         lookSpeed = 0;
         //docObject.SetActive(true);
@@ -90,6 +97,6 @@ public class Menu_Camera_Controller : MonoBehaviour
     }
 
     public void AbandonSearch(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(3);
     }
 }
