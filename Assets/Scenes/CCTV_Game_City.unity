@@ -90346,6 +90346,10 @@ PrefabInstance:
       propertyPath: inGameMenu
       value: 
       objectReference: {fileID: 517643711}
+    - target: {fileID: 6066304789710947372, guid: 344c21c3d5f0f1147bfddaefd256a2fc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6785534036716925785, guid: 344c21c3d5f0f1147bfddaefd256a2fc, type: 3}
       propertyPath: m_Name
       value: LoadingScreen
